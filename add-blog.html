@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add-blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/özel-ölcüler.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.2.1/ckeditor5.css">
+    <link rel="icon" href="/assets/images/logo mt 1.png">
+    <style>
+        .ck-editor__editable{
+            height: 250px !important;
+        }
+    </style>
+    <script>
+        window.onload  = function () {
+            setTimeout(function () {
+                document.getElementById("loader").style.display = "none"
+            },1000) ;
+        } ;
+    </script>    
+</head>
+<body>
+
+    <div class="" id="loader">
+        <img width="300px" src="assets/images/loader.svg" alt="">
+    </div>
+
+
+    <div class="main-wrapper">
+
+        <nav class="fixed-top">
+
+            <header class="header d-flex justify-content-between py-1 ">
+                
+                <div class="left-header d-flex align-items-center gap-3 ">
+                    
+                    <div class="logo d-none d-md-block">
+
+                        <a href="/">ANA SAYFA</a>
+
+                    </div>
+
+                    <div class="px-3">
+                        <a href="#"> <i class="fa-solid fa-bars" id="sidebar-toggle"></i> </a>
+                    </div>
+
+                    <form action="" class="d-none d-md-block">
+
+                        <input type="text" class="form-control" placeholder="ARAMAK İÇİN ÜRÜNÜN ADI GİRİNİZ">
+
+                    </form>
+
+                </div>
+
+
+                <div class="right-header d-flex align-items-center gap-3 px-3 ">
+                
+                    
+                    <div class="icone d-flex gap-2">
+                        <a class="position-relative comment" href=""> <i class="fa-regular fa-comment"></i> </a>
+                        <a class="position-relative bell" href=""> <i class="fa-regular fa-bell"></i> </a>
+                        
+                        <div class="messages-container position-relative" id="messages-container">
+
+                            <i class="position-relative envelope fa-regular fa-envelope"></i>
+
+                            <ul class="messages-area position-absolute text-center" id="messages-area"> 
+                                
+                                <div class="messages-header">
+                                    <h3>SON MESAJLAR</h3>
+                                </div>
+
+
+
+                                    <li class="d-flex align-items-center justify-content-between">
+
+                                        <div class="d-flex item-menu-left gap-3">
+
+                                            <img  src="assets/images/pngtree-man-avatar-image-for-profile-png-image_13001877-removebg-preview.png" alt="">
+                                            <h4>MUHAMMED ELTAVİL</h4>
+
+                                        </div>
+
+                                        <a class="position-relative comment comment-lest" href=""> <i class="fa-regular fa-comment"></i> </a>
+
+                                    </li>
+
+
+
+                                    <li class="d-flex align-items-center justify-content-between">
+
+                                        <div class="d-flex item-menu-left gap-3">
+
+                                            <img src="assets/images/14.png" alt="">
+                                            <h4>AYŞE MESA</h4>
+
+                                        </div>
+
+                                        <a class="position-relative comment comment-lest" href=""> <i class="fa-regular fa-comment"></i> </a>
+
+                                    </li>
+
+
+
+                                    <li class="d-flex align-items-center justify-content-between">
+
+                                        <div class="d-flex item-menu-left gap-3">
+
+                                            <img src="assets/images/15.png" alt="">
+                                            <h4>AHMET İPSUM</h4>
+
+                                        </div>
+
+                                        <a class="position-relative comment comment-lest" href=""> <i class="fa-regular fa-comment"></i> </a>
+
+                                    </li>
+
+
+
+                                    <li class="d-flex align-items-center justify-content-between mb-3">
+
+                                        <div class="d-flex item-menu-left gap-3">
+
+                                            <img src="assets/images/13.png" alt="">
+                                            <h4>FATMA LOREM</h4>
+
+                                        </div>
+
+                                        <a class="position-relative comment comment-lest" href=""> <i class="fa-regular fa-comment"></i> </a>
+
+                                    </li>
+                                
+                                    <a href="" class="messages-btn">TÜM MESAJLAR</a>
+
+                            
+                            </ul>
+
+                        </div>
+
+                        <a class="position-relative comments" href=""> <i class="fa-regular fa-comments"></i> </a>
+                    </div>
+
+                    
+                    <div class="avatar">
+                        
+                        <img src="assets/images/pngtree-man-avatar-image-for-profile-png-image_13001877-removebg-preview.png" alt="">
+               
+                    </div>
+
+
+                    <a data-bs-toggle="offcanvas" href="#users-online-list"> <i class="fa-solid fa-chart-bar active-users"></i> </a>
+                
+
+                </div>
+
+
+
+
+
+            </header>
+
+        </nav>
+
+        <div class="sidebar" id="sidebar">
+
+            <div class="profile">
+
+                <img width="90px" src="/assets/images/تصميم بدون عنوان (5).png" alt="">
+                <h3>MUHAMMED ELTAVİL</h3>
+                <h4 class="justify-content-center">( MÜDÜR )</h4>
+
+            </div>
+
+            <ul class="ul-sidebar">
+
+                <li class="mb-2 active">
+                    <i class="fa-solid fa-house fs-5"></i>
+                    <a href="index.html" class="m-l-5">ANA SAYFA</a>
+                </li>
+
+                <li class="mb-2">
+                    <i class="fa-solid fa-database"></i>
+                    <a href="" class="m-l-5" >VERİLER</a>
+                </li>
+
+                <li class="mb-2">
+                    <i class="fa-solid fa-person-chalkboard"></i>
+                    <a href="" class="m-l-5" >ÖĞRETMENLER</a>
+                </li>
+
+                <li class="mb-2">
+                    <i class="fa-solid fa-users"></i>
+                    <a href="" class="m-l-5" >ÖĞRENCİLER</a>
+                </li>
+                
+                <li class="mb-2">
+                    <i class="fa-solid fa-square-rss"></i>
+                    <a href="blog.html" class="m-l-5" >BLOG</a>
+                </li>
+
+                <li class="mb-2">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <a href="" class="m-l-5" >ÜRÜNLER</a>
+                </li>
+
+                <li class="mb-2">
+                    <i class="fa-solid fa-money-bills"></i>
+                    <a href="" class="m-l-5" >PARA FATURALARI</a>
+                </li>
+
+                <li class="mb-2">
+                    <i class="fa-solid fa-folder"></i>
+                    <a href="" class="m-l-5" >DOSYALAR</a>
+                </li>
+
+                <li class="mb-2">
+                    <i class="fa-solid fa-gears"></i>
+                    <a href="" class="m-l-5" >AYARLAR</a>
+                </li>
+
+            </ul>
+
+
+        </div>
+
+        <div class="content p-3" id="content">
+
+            <div class="inner-content">
+                
+                <div class="container-fluid">
+                    
+                    <h4 class="tum-ogrenci-kelimesi">YENİ BOLG EKLE</h4>
+
+                    
+                    
+                    <div class="row mt-3">
+
+                        <div class="col">
+
+                            <div class="card p-3">
+
+                                <form action="">
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+
+                                            <label for="">BOLG ADI :</label>
+                                            <input type="text" placeholder="Lütfen Blog Adı Giriniz" class="form-control">
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <label for="">BOLGUN LİNKİN :</label>
+                                            <input type="text" placeholder="Lütfen Blog Linki Giriniz" class="form-control">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row mt-3">
+
+                                        <div class="col-md-6">
+
+                                            <label for="">CATEGORY :</label>
+                                            
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected disabled>lütfen category seçiniz :</option>
+                                                <option value="1">yapay zeka</option>
+                                                <option value="2">kodlama dilleri</option>
+                                                <option value="3">wep sayfası</option>
+                                                <option value="3">telefon uygulaması</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <label for="">TAG :</label>
+                                            
+                                            <select class="js-example-basic-multiple form-select" name="states[]" multiple="multiple">
+                                                <option value="AL">Alabama</option>
+                                                <option value="WY">Wyoming</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="WY">Wyoming</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="WY">Wyoming</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="WY">Wyoming</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row mt-3">
+
+                                        <div class="col-md-6">
+
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">BLOG FOTOĞRAFI EKLE :</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">KÜÇÜK FOTOĞRAFI EKLE :</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="">
+
+                                        <textarea name="editor" class="form-control" id="editor" ></textarea>
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- users online list -->
+      
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="users-online-list" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">PERSONEL</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+
+            <div class="alert alert-success">
+                TÜM CANLI KULANICILAR
+            </div>
+
+
+            <div class="yan-sayfadan-kulanici d-flex mb-3">
+                
+                <!-- position-relative  -->
+
+                <div class="avatar-info d-flex"> 
+
+                    <div style="width: 10px; height: 10px;" class="spinner-grow text-success grow-user activlik" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    
+
+                    <img width="50px" src="assets/images/pngtree-man-avatar-image-for-profile-png-image_13001877-removebg-preview.png" alt="">
+                    <h4>MUHAMMED ELTAVİL</h4>
+
+                </div>
+
+                <div class="contact-info">
+
+                    <i class="fa-brands fa-square-whatsapp whatsapp-icon"></i>
+                    <i class="fa-brands fa-square-instagram instagram-icon"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="yan-sayfadan-kulanici d-flex mb-3">
+                
+                <!-- position-relative  -->
+
+                <div class="avatar-info d-flex"> 
+
+                    <div style="width: 10px; height: 10px;" class="spinner-grow text-success grow-user activlik" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    
+
+
+                    <img src="assets/images/14.png" alt="">
+                    <h4>AYŞE MESA</h4>
+
+                </div>
+
+                <div class="contact-info">
+
+                    <i class="fa-brands fa-square-whatsapp whatsapp-icon"></i>
+                    <i class="fa-brands fa-square-instagram instagram-icon"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="yan-sayfadan-kulanici d-flex mb-3">
+                
+                <!-- position-relative  -->
+
+                <div class="avatar-info d-flex"> 
+
+                    <div style="width: 10px; height: 10px;" class="spinner-grow text-success grow-user activlik" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    
+
+                    <img src="assets/images/15.png" alt="">
+                    <h4>AHMET İPSUM</h4>
+
+                </div>
+
+                <div class="contact-info">
+
+                    <i class="fa-brands fa-square-whatsapp whatsapp-icon"></i>
+                    <i class="fa-brands fa-square-instagram instagram-icon"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="yan-sayfadan-kulanici d-flex mb-3">
+                
+                <!-- position-relative  -->
+
+                <div class="avatar-info d-flex"> 
+
+                    <div style="width: 10px; height: 10px;" class="spinner-grow text-success grow-user activlik" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    
+
+
+                    <img src="assets/images/16.png" alt="">
+                    <h4>TARIK DOLOR</h4>
+
+                </div>
+
+                <div class="contact-info">
+
+                    <i class="fa-brands fa-square-whatsapp whatsapp-icon"></i>
+                    <i class="fa-brands fa-square-instagram instagram-icon"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="yan-sayfadan-kulanici d-flex mb-3">
+                
+                <!-- position-relative  -->
+
+                <div class="avatar-info d-flex"> 
+
+                    <div style="width: 10px; height: 10px;" class="spinner-grow text-success grow-user activlik" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    
+
+
+                    <img src="assets/images/17.png" alt="">
+                    <h4>NEBİL SİT</h4>
+
+                </div>
+
+                <div class="contact-info">
+
+                    <i class="fa-brands fa-square-whatsapp whatsapp-icon"></i>
+                    <i class="fa-brands fa-square-instagram instagram-icon"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="yan-sayfadan-kulanici d-flex mb-3">
+                
+                <!-- position-relative  -->
+
+                <div class="avatar-info d-flex"> 
+
+                    <div style="width: 10px; height: 10px;" class="spinner-grow text-success grow-user activlik" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    
+
+                    <img src="assets/images/13.png" alt="">
+                    <h4>FATMA LOREM</h4>
+
+                </div>
+
+                <div class="contact-info">
+
+                    <i class="fa-brands fa-square-whatsapp whatsapp-icon"></i>
+                    <i class="fa-brands fa-square-instagram instagram-icon"></i>
+
+                </div>
+
+            </div>
+
+          <div class="dropdown mt-3">
+            
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="assets/js/datatables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2({
+                tags:true ,
+                maximumSelectionLength: 5
+
+            });
+        });
+    </script>
+
+
+<script type="importmap">
+    {
+        "imports": {
+            "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/43.3.1/ckeditor5.js",
+            "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/43.3.1/"
+        }
+    }
+
+</script>
+
+<script type="module">
+    import {
+        ClassicEditor,
+        Essentials,
+        Bold,
+        Italic,
+        Underline,
+        Strikethrough,
+        Subscript,
+        Superscript,
+        Font,
+        Paragraph,
+        CodeBlock,
+        Link,
+        List,
+        Image,
+        ImageToolbar,
+        ImageCaption,
+        ImageStyle,
+        ImageResize,
+        Table,
+        TableToolbar,
+        MediaEmbed,
+        BlockQuote,
+        Alignment,
+        Highlight,
+        RemoveFormat,
+        Heading,
+        TodoList,
+        Indent,
+        IndentBlock
+    } from 'ckeditor5';
+
+    ClassicEditor
+        .create(document.querySelector('#editor'), {
+            plugins: [
+                Essentials, Bold, Italic, Underline, Strikethrough, Subscript, Superscript, Font, Paragraph, CodeBlock,
+                Link, List, Image, ImageToolbar, ImageCaption, ImageStyle, ImageResize, Table, TableToolbar,
+                MediaEmbed, BlockQuote, Alignment, Highlight, RemoveFormat, Heading, TodoList, Indent, IndentBlock
+            ],
+            toolbar: {
+                items: [
+                    'undo', 'redo',
+                    '|',
+                    'heading',
+                    '|',
+                    'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
+                    '|',
+                    'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', 'code',
+                    '|',
+                    'link', 'uploadImage', 'blockQuote', 'codeBlock',
+                    '|',
+                    'alignment',
+                    '|',
+                    'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent',
+                    '|',
+                    'insertTable', 'mediaEmbed',
+                    '|',
+                    'highlight', 'removeFormat'
+                ],
+                shouldNotGroupWhenFull: true
+            },
+            image: {
+                toolbar: [
+                    'imageTextAlternative', 'toggleImageCaption', 'imageStyle:inline', 'imageStyle:block', 'imageStyle:side', 'linkImage'
+                ]
+            },
+            table: {
+                contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
+            },
+            language: {
+                lnguage: 'ar',
+                languageDirection: 'rtl'
+            }
+        })
+        .then(editor => {
+            console.log('Editor was initialized', editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
+
+</body>
+</html>
