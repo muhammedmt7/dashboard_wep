@@ -18,6 +18,7 @@ a {
 .header {
     background-color: white;
     box-shadow: 3px 3px 3px #cccccc6a;
+    z-index: 10001;
 }
 
 .logo {
@@ -108,7 +109,8 @@ a {
     overflow: hidden;
     transition: 0.3s;
     overflow-y: scroll;
-    top: 40px;
+    top: 49px;
+    z-index: 10000;
 }
 
 .content {
@@ -211,7 +213,7 @@ a {
 
 .stat1 {
     /* background-image: linear-gradient(90deg , red , green); */
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     display: flex;
     justify-content: space-between;
@@ -317,7 +319,7 @@ a {
 }
 
 .activlik {
-    z-index: 1000;
+    z-index: 100 ;
 }
 
 .avatar-info {
@@ -382,7 +384,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10000;
+    z-index: 100000;
 }
 
 
@@ -402,6 +404,31 @@ a {
     border-bottom: 3px solid gold;
     display: none;
 }
+
+@media (max-width: 768px ) {
+
+    .messages-area  {
+        transform: translate(105px, 0);
+    }
+
+}
+
+@media (max-width: 768px ) {
+
+    .messages-header::after {
+        position: absolute;
+        content: "";
+        /* width: 15px;
+        height: 15px;
+        background-color: red; */
+        top: -30px;
+        right: 130px !important;
+        border: 15px solid;
+        border-color: transparent transparent gold transparent ;
+    }
+
+}
+
 
 .messages-area li {
     border-bottom: 1px solid gold ;
@@ -518,23 +545,23 @@ a {
 
 
 #sidebar::-webkit-scrollbar {
-    width: 8px; 
+    width: 10px;
 }
 
 #sidebar::-webkit-scrollbar-track {
-    background:#878787 ;
+    background:rgb(23,36,77) ;
     border-radius:0px ;
 }
 
 
 #sidebar::-webkit-scrollbar-thumb {
-    background: #000000;
-    border-radius: 20px;
+    background: black;
+    border-radius: 5px;
 }
 
 
 #sidebar::-webkit-scrollbar-thumb:hover {
-    background: #09d013;
+    background: gold;
 }
 
    
